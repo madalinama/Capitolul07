@@ -28,11 +28,12 @@ aprins = true;
 
 void BecReglabil::ReduceLumina(short reduceLumina)
 {
-putereCurenta-=reduceLumina;
-if (putereCurenta<0)
-    putereCurenta=0;
-else if (putereCurenta==0)
-    aprins=false;
+    if (putereCurenta<=reduceLumina)
+       {
+           putereCurenta=0;
+           aprins=false;
+           }
+    else putereCurenta-=reduceLumina;
 }
 
 void BecReglabil::StareBec()
